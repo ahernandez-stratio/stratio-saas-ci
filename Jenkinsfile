@@ -26,8 +26,7 @@ pipeline {
 
        stage('scm') {
            steps {
-	       sh 'docker-machine upgrade'
-               checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'githubuser', url: "${params.GITHUB_MICRO_BASE_URL}/${env.JOB_NAME}.git"]]])
+	       checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'githubuser', url: "${params.GITHUB_MICRO_BASE_URL}/${env.JOB_NAME}.git"]]])
            }
        }
 
@@ -44,7 +43,6 @@ pipeline {
             steps {
                 sh 'mvn clean deploy sonar:sonar --settings /opt/settings.xml'
             }
-        
        }
 
         stage('Deploy') {
