@@ -1,6 +1,11 @@
 
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'jenkinsci/slave'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
     tools { 
         maven 'Maven 3.3.9'
     }
