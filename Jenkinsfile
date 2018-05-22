@@ -1,10 +1,7 @@
 
 pipeline {
     agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v $HOME/.m2:/root/.m2'
-        }
+        docker any
     }
     tools { 
         maven 'Maven 3.3.9'
