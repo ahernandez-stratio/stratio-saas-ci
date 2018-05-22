@@ -26,6 +26,7 @@ pipeline {
 
        stage('scm') {
            steps {
+	       sh 'docker-machine upgrade'
                checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'githubuser', url: "${params.GITHUB_MICRO_BASE_URL}/${env.JOB_NAME}.git"]]])
            }
        }
