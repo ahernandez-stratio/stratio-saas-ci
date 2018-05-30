@@ -1,7 +1,7 @@
 
 pipeline {
 	agent {
-		label 'mesos'	
+		node { label 'mesos' }
 	}
     tools { 
         maven 'Maven 3.3.9'
