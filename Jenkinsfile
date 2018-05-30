@@ -1,6 +1,8 @@
 
 pipeline {
-	agent any
+	agent {
+		label 'mesos-slave'
+	}
     tools { 
         maven 'Maven 3.3.9'
     }
