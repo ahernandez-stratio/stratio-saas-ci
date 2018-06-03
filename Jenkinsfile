@@ -14,6 +14,7 @@ pipeline {
         string(name: 'MARATHON_API_URL', defaultValue: 'https://bootstrap.saas.stratio.com/service/marathon/v2/apps', description: 'Marathon API URL to deploy docker image')
 	string(name: 'GITHUB_MICRO_BASE_URL', defaultValue: 'https://github.com/ahernandez-stratio', description: 'GitHub microservices base URL')
         string(name: 'SSO_USER', defaultValue: 'owyman', description: 'Stratio plattform SSO user')
+	string(name: 'DOCKER_API_VERSION', defaultValue: '1.23', description: 'Docker API Version for client')
         password(name: 'SSO_PASSWORD', defaultValue: 'owyman2018', description: 'Stratio plattform SSO password')
     }
 
