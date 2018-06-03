@@ -38,7 +38,7 @@ pipeline {
        stage ('Build & SonarQube analysis') {
             steps {
                 sh 'mvn clean deploy sonar:sonar --settings /opt/settings.xml'
-		sh 'systemctl restart docker'
+		sh 'service docker restart'
             }
        }
 
