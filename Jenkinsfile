@@ -37,7 +37,7 @@ pipeline {
        
        stage ('Build & SonarQube analysis') {
             steps {
-                sh 'mvn clean deploy sonar:sonar --settings /opt/settings.xml'
+                sh 'mvn clean deploy sonar:sonar --settings /opt/settings.xml'  -Dorg.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL=300
             }
        }
 
